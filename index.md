@@ -1,7 +1,7 @@
 <h1 align="center">
   <a href="https://standardjs.com"><img src="https://cdn.rawgit.com/feross/standard/master/sticker.svg" alt="Standard - JavaScript Style Guide" width="200"></a>
   <br>
-  JavaScript Standard Style
+  JavaScript 标准风格
   <br>
   <br>
 </h1>
@@ -13,118 +13,108 @@
   <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 </p>
 
-<h4 align="center">One JavaScript Style to Rule Them All</h4>
+<h4 align="center">一种风格规范全部代码</h4>
 
 <p align="center">
-  Translations:
-  <a href="docs/README-ptbr.md">Português</a>,
-  <a href="docs/README-esla.md">Spanish</a>,
-  <a href="docs/README-zhtw.md">繁體中文</a>,
-  <a href="docs/README-zhcn.md">简体中文</a>
+  翻译：
+  <a href="https://standardjs.com/rules-ptbr.html">Português</a>,
+  <a href="https://standardjs.com/rules-esla.html">Spanish</a>,
+  <a href="https://standardjs.com/rules-zhtw.html">繁體中文</a>,
+  <a href="https://standardjs.com/rules-zhcn.html">简体中文</a>
 </p>
 
 <br>
 
-## JavaScript style guide, with linter & automatic code fixer
+## JavaScript 代码规范，包含检查器和自动格式化工具
 
-This module saves you (and others!) time in three ways:
+这个模块在以下方面帮助你（以及他人）节省时间：
 
-- **No configuration.** The easiest way to enforce consistent style in your
-  project. Just drop it in.
-- **Automatically format code.** Just run `standard --fix` and say goodbye to
-  messy or inconsistent code.
-- **Catch style issues & programmer errors early.** Save precious code review
-  time by eliminating back-and-forth between reviewer & contributor.
+- **不用配置。** 以最简单的方式强制项目使用统一的风格，安装即用。
+- **自动格式化代码。** 只需运行命令 `standard --fix` 便可以跟杂乱不统一的代码风格说再见。
+- **在代码提交前发现代码风格上的错误。** 消除维护者与贡献者之间的来回打转，节省宝贵的代码审查时间。
 
-No decisions to make. No `.eslintrc`, `.jshintrc`, or `.jscsrc` files to manage. It just
-works.
+不需要选择，不需要 `.eslintrc`、`.jshintrc` 或 `.jscsrc`，就可以用。
 
-Install with:
+安装：
 
 ```
 npm install standard --save-dev
 ```
 
-## The Rules
+## 规则
 
-- **2 spaces** – for indentation
-- **Single quotes for strings** – except to avoid escaping
-- **No unused variables** – this one catches *tons* of bugs!
-- **No semicolons** – [It's][1] [fine.][2] [Really!][3]
-- **Never start a line with `(`, `[`, or `` ` ``**
-  - This is the **only** gotcha with omitting semicolons – *automatically checked for you!*
-  - [More details][4]
-- **Space after keywords** `if (condition) { ... }`
-- **Space after function name** `function name (arg) { ... }`
-- Always use `===` instead of `==` – but `obj == null` is allowed to check `null || undefined`.
-- Always handle the node.js `err` function parameter
-- Always prefix browser globals with `window` – except `document` and `navigator` are okay
-  - Prevents accidental use of poorly-named browser globals like `open`, `length`,
-    `event`, and `name`.
-- **And [more goodness][5]** – *give `standard` a try today!*
+- 缩进使用两个空格。
+- 字符串使用单引号，用双引号只是为了避免转义单引号。
+- 无未使用变量。这能帮助发现大量的错误。
+- 不使用分号。[这么做][1] [没问题][2]。 [真的][3]！
+- 行首不能是 `(`，`[` 或 `` ` ``。
+    - 这是省略分号时唯一陷阱——自动为你检查。
+    - [详细][4]
+- 关键字后面放一个空格。`if (condition) { ... }`
+- 函数名字后面放一个空格。`function name (arg) { ... }`
+- 始终用 `===`，不要用 `==`。不过可以用 `obj == null` 检测 `null || undefined`。
+- 始终处理 node.js 回调的 `err` 参数。
+- 始终以 `window` 引用浏览器的全局变量。 `document` 和 `navigator` 除外。
+    - 这是为了防止使用浏览器那些命名糟糕的全局变量，比如 `open`, `length`,
+    `event` 和 `name`。
+- [更多][5]——现在开始试用 `standard`！
 
 [1]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [2]: http://inimino.org/~inimino/blog/javascript_semicolons
 [3]: https://www.youtube.com/watch?v=gsfbh17Ax9I
-[4]: RULES.md#semicolons
-[5]: RULES.md#javascript-standard-style
+[4]: rules.md#分号
+[5]: rules.md#javascript-standard-style
 
-To get a better idea, take a look at
-[a sample file](https://github.com/expressjs/body-parser/blob/master/index.js) written
-in JavaScript Standard Style. Or, check out one of the
-[thousands of projects](https://raw.githubusercontent.com/feross/standard-packages/master/all.json)
-that use `standard`!
+为了更好的理解，看看使用 JavaScript Standard Style 写的[示例](https://github.com/feross/bittorrent-dht/blob/master/client.js)，
+或者看看使用 `standard` 的[项目](https://github.com/feross/standard-packages/blob/master/all.json)。
 
-## Table of Contents
+## 目录
 
-- Quick start
-  - [Install](#install)
-  - [Usage](#usage)
-  - [What you might do if you're clever](#what-you-might-do-if-youre-clever)
+- 快速上手
+  - [安装](#安装)
+  - [用法](#用法)
+  - [聪明的你会这么做](#聪明的你会这么做)
 - FAQ
-  - [Why should I use JavaScript Standard Style?](#why-should-i-use-javascript-standard-style)
-  - [Who uses JavaScript Standard Style?](#who-uses-javascript-standard-style)
-  - [Are there text editor plugins?](#are-there-text-editor-plugins)
-  - [Is there a readme badge?](#is-there-a-readme-badge)
-  - [I disagree with rule X, can you change it?](#i-disagree-with-rule-x-can-you-change-it)
-  - [But this isn't a real web standard!](#but-this-isnt-a-real-web-standard)
-  - [Is there an automatic formatter?](#is-there-an-automatic-formatter)
-  - [How do I ignore files?](#how-do-i-ignore-files)
-  - [How do I hide a certain warning?](#how-do-i-hide-a-certain-warning)
-  - [I use a library that pollutes the global namespace. How do I prevent "variable is not defined" errors?](#i-use-a-library-that-pollutes-the-global-namespace-how-do-i-prevent-variable-is-not-defined-errors)
-  - [How do I use experimental JavaScript (ES Next) features?](#how-do-i-use-experimental-javascript-es-next-features)
-  - [Can I use a JavaScript language variant, like Flow?](#can-i-use-a-javascript-language-variant-like-flow)
-  - [What about Mocha, Jasmine, QUnit, etc?](#what-about-mocha-jasmine-qunit-etc)
-  - [What about Web Workers?](#what-about-web-workers)
-  - [Can I check code inside of Markdown or HTML files?](#can-i-check-code-inside-of-markdown-or-html-files)
-  - [Is there a Git `pre-commit` hook?](#is-there-a-git-pre-commit-hook)
-  - [How do I make the output all colorful and *pretty*?](#how-do-i-make-the-output-all-colorful-and-pretty)
-  - [Is there a Node.js API?](#is-there-a-nodejs-api)
-  - [How do I contribute to `standard`?](#how-do-i-contribute-to-standard)
-- [License](#license)
+  - [为什么我要用 JavaScript Standard Style?](#为什么我要用-javascript-standard-style)
+  - [谁在用 JavaScript Standard Style？](#谁在用-javascript-standard-style)
+  - [有编辑器插件吗？](#有编辑器插件吗)
+  - [有 readme 徽章吗？](#有-readme-徽章吗)
+  - [我不同意规则 X，你可以修改它吗？](#我不同意规则-x你可以修改它吗)
+  - [但是并没有真正的 web 标准！](#但是并没有真正的-web-标准)
+  - [有自动格式化工具吗？](#有自动格式化工具吗)
+  - [如何忽略文件？](#如何忽略文件)
+  - [如何隐藏某个警告？](#如何隐藏某个警告)
+  - [我使用的库污染了全局空间，怎么阻止 “variable is not defined” 错误？](#我使用的库污染了全局空间怎么阻止-variable-is-not-defined-错误)
+  - [我可以使用实验性质 JavaScript (ES Next) 功能吗？](#我可以使用实验性质-javascript-es-next-功能吗)
+  - [我可以使用 JavaScript 变体吗，比如 Flow？](#我可以使用-javascript-变体吗比如-flow)
+  - [Mocha, Jasmine, QUnit 等测试框架呢？](#mocha-jasmine-qunit-等测试框架呢)
+  - [Web Workers 呢？](#web-workers-呢)
+  - [可以检查 Markdown 或 HTML 文件中的代码吗？](#可以检查-markdown-或-html-文件中的代码吗)
+  - [有 Git pre-commit 钩子吗？](#有-git-pre-commit-钩子吗)
+  - [怎么让输出多彩美观？](#怎么让输出多彩美观)
+  - [有 Node.js API 吗？](#有-nodejs-api-吗)
+  - [如何为 standard 做出贡献？](#如何为-standard-做出贡献)
+- [版权](#版权)
 
-## Install
+## 安装
 
-The easiest way to use JavaScript Standard Style is to install it globally as a
-Node command line program. Run the following command in Terminal:
+使用 JavaScript Standard Style 检查代码，最简单的办法是全局安装它。在终端中运行下面命令：
 
 ```bash
 $ npm install standard --global
 ```
 
-Or, you can install `standard` locally, for use in a single project:
+或者运行下面命令以本地安装 `standard`：
 
 ```bash
 $ npm install standard --save-dev
 ```
 
-*Note: To run the preceding commands, [Node.js](http://nodejs.org) and [npm](https://npmjs.com) must be installed.*
+运行这些命令需要先安装 [Node.js](http://nodejs.org) 和 [npm](https://npmjs.com)。
 
-## Usage
+## 用法
 
-After you've installed `standard`, you should be able to use the `standard` program. The
-simplest use case would be checking the style of all JavaScript files in the
-current working directory:
+在安装 `standard` 之后即可使用 `standard` 程序。最简单的用法是检查当前目录下的所有的 JavaScript 文件：
 
 ```bash
 $ standard
@@ -132,20 +122,17 @@ Error: Use JavaScript Standard Style
   lib/torrent.js:950:11: Expected '===' and instead saw '=='.
 ```
 
-You can optionally pass in a directory (or directories) using the glob pattern. Be
-sure to quote paths containing glob patterns so that they are expanded by
-`standard` instead of your shell:
+你可以使用 glob 模式传入一个目录或多个目录。注意 glob 模式要用引号包起来，这样它将由 `standard` 而不是 shell 展开：
 
 ```bash
 $ standard "src/util/**/*.js" "test/**/*.js"
 ```
 
-**Note:** by default `standard` will look for all files matching the patterns:
-`**/*.js`, `**/*.jsx`.
+**注意：** `standard` 默认以这个模式查找文件：`**/*.js`, `**/*.jsx`。
 
-## What you might do if you're clever
+## 聪明的你会这么做
 
-1. Add it to `package.json`
+1. 添加 `standard` 到 `package.json`:
 
   ```json
   {
@@ -159,7 +146,7 @@ $ standard "src/util/**/*.js" "test/**/*.js"
   }
   ```
 
-2. Style is checked automatically when you run `npm test`
+2. 当运行 `npm test` 时自动检查代码风格
 
   ```bash
   $ npm test
@@ -167,68 +154,116 @@ $ standard "src/util/**/*.js" "test/**/*.js"
     lib/torrent.js:950:11: Expected '===' and instead saw '=='.
   ```
 
-3. Never give style feedback on a pull request again!
+3. 永远不提交修改代码风格的 pr。
 
-## Why should I use JavaScript Standard Style?
+## 为什么我要用 JavaScript Standard Style?
 
-The beauty of JavaScript Standard Style is that it's simple. No one wants to
-maintain multiple hundred-line style configuration files for every module/project
-they work on. Enough of this madness!
+JavaScript Standard Style 的美妙之处是简单。没有人想为每个模块/项目维护几百行的风格配置。这太疯狂了！
 
-This module saves you (and others!) time in three ways:
+这个模块在以下方面帮助你（以及他人）节省时间：
 
-- **No configuration.** The easiest way to enforce consistent style in your
-  project. Just drop it in.
-- **Automatically format code.** Just run `standard --fix` and say goodbye to
-  messy or inconsistent code.
-- **Catch style issues & programmer errors early.** Save precious code review
-  time by eliminating back-and-forth between reviewer & contributor.
+- **不用配置。** 以最简单的方式强制项目使用统一的风格，安装即用。
+- **自动格式化代码。** 只需运行命令 `standard --fix` 便可以跟杂乱不统一的代码风格说再见。
+- **在代码提交前发现代码风格上的错误。** 消除维护者与贡献者之间的来回打转，节省宝贵的代码审查时间。
 
-Adopting `standard` style means ranking the importance of code clarity and
-community conventions higher than personal style. This might not make sense for
-100% of projects and development cultures, however open source can be a hostile
-place for newbies. Setting up clear, automated contributor expectations makes a
-project healthier.
+接受 `standard` 风格意味将代码的清晰与社区的约定放在个人的风格的前面。虽然不是适合于所有的项目及开发文化，但是开源项目可能对新手不大友好。对贡献者设置清晰的、自动化的期望，能让项目更健康。
 
-## Who uses JavaScript Standard Style?
+## 谁在用 JavaScript Standard Style？
 
-Lots of folks!
+许多人！
 
-[<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/npm.png>](https://www.npmjs.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/github.png>](https://github.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/opbeat.png>](https://opbeat.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/nearform.png>](http://www.nearform.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/brave.png>](https://www.brave.com) |
-|---|---|---|---|---|
+<table>
+<thead>
+<tr>
+<th><a href="https://www.npmjs.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/npm.png"></a></th>
+<th><a href="https://github.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/github.png"></a></th>
+<th><a href="https://opbeat.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/opbeat.png"></a></th>
+<th><a href="http://www.nearform.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/nearform.png"></a></th>
+<th><a href="https://www.brave.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/brave.png"></a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 
-| [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/zeit.png>](https://zeit.co) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/zendesk.png>](https://www.zendesk.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/mongodb.jpg>](https://www.mongodb.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/typeform.jpg>](https://www.typeform.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/gov-uk.png>](https://gds.blog.gov.uk) |
-|---|---|---|---|---|
+<table>
+<thead>
+<tr>
+<th><a href="https://zeit.co"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/zeit.png"></a></th>
+<th><a href="https://www.zendesk.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/zendesk.png"></a></th>
+<th><a href="https://www.mongodb.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/mongodb.jpg"></a></th>
+<th><a href="https://www.typeform.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/typeform.jpg"></a></th>
+<th><a href="https://gds.blog.gov.uk"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/gov-uk.png"></a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 
-[<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/express.png>](http://expressjs.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/webtorrent.png>](https://webtorrent.io) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/ipfs.png>](https://ipfs.io) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/dat.png>](https://datproject.org) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/bitcoinjs.png>](https://bitcoinjs.org) |
-|---|---|---|---|---|
+<table>
+<thead>
+<tr>
+<th><a href="http://expressjs.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/express.png"></a></th>
+<th><a href="https://webtorrent.io"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/webtorrent.png"></a></th>
+<th><a href="https://ipfs.io"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/ipfs.png"></a></th>
+<th><a href="https://datproject.org"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/dat.png"></a></th>
+<th><a href="https://bitcoinjs.org"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/bitcoinjs.png"></a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 
-[<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/atom.png>](https://atom.io) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/electron.png>](http://electron.atom.io) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/voltra.png>](https://voltra.co) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/treasuredata.png>](https://www.treasuredata.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/clevertech.png>](https://clevertech.biz) |
-|---|---|---|---|---|
+<table>
+<thead>
+<tr>
+<th><a href="https://atom.io"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/atom.png"></a></th>
+<th><a href="http://electron.atom.io"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/electron.png"></a></th>
+<th><a href="https://voltra.co"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/voltra.png"></a></th>
+<th><a href="https://www.treasuredata.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/treasuredata.png"></a></th>
+<th><a href="https://clevertech.biz"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/clevertech.png"></a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 
-[<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/studynotes.jpg>](https://www.apstudynotes.org) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/optiopay.png>](https://www.optiopay.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/jaguar-landrover.png>](https://www.jlrtechincubator.com/jlrti/) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/bustle.jpg>](https://www.bustle.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/zentrick.png>](https://www.zentrick.com) |
-|---|---|---|---|---|
+<table>
+<thead>
+<tr>
+<th><a href="https://www.apstudynotes.org"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/studynotes.jpg"></a></th>
+<th><a href="https://www.optiopay.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/optiopay.png"></a></th>
+<th><a href="https://www.jlrtechincubator.com/jlrti/"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/jaguar-landrover.png"></a></th>
+<th><a href="https://www.bustle.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/bustle.jpg"></a></th>
+<th><a href="https://www.zentrick.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/zentrick.png"></a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 
-[<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/nodesource.png>](https://nodesource.com) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/greenkeeper.png>](https://greenkeeper.io) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/karma.png>](https://karma-runner.github.io) | [<img width=150 src=https://cdn.rawgit.com/feross/standard/master/docs/logos/taser.png>](https://www.taser.com) |
-|---|---|---|---|
+<table>
+<thead>
+<tr>
+<th><a href="https://nodesource.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/nodesource.png"></a></th>
+<th><a href="https://greenkeeper.io"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/greenkeeper.png"></a></th>
+<th><a href="https://karma-runner.github.io"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/karma.png"></a></th>
+<th><a href="https://www.taser.com"><img width="150" src="https://cdn.rawgit.com/feross/standard/master/docs/logos/taser.png"></a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
 
-In addition to companies, many community members use `standard` on packages that
-are [too numerous](https://raw.githubusercontent.com/feross/standard-packages/master/all.json)
-to list here.
+除了公司，使用 `standard` 的社区[数不甚数](https://raw.githubusercontent.com/feross/standard-packages/master/all.json)
+，这里无法一一列举。
 
-`standard` is also the top-starred linter in GitHub's
-[Clean Code Linter](https://github.com/showcases/clean-code-linters) showcase.
+`standard` 也是 GitHub
+[Clean Code Linter](https://github.com/showcases/clean-code-linters) 中星星最多的检查器。
 
-## Are there text editor plugins?
+## 有编辑器插件吗？
 
-First, install `standard`. Then, install the appropriate plugin for your editor:
+先安装 `standard` 再安装插件。
 
 ### Sublime Text
 
-Using **[Package Control][sublime-1]**, install **[SublimeLinter][sublime-2]** and
-**[SublimeLinter-contrib-standard][sublime-3]**.
+使用 [Package Control][sublime-1] 安装 [SublimeLinter][sublime-2]、[SublimeLinter-contrib-standard][sublime-3]。
 
-For automatic formatting on save, install **[StandardFormat][sublime-4]**.
+保存文件时自动格式化，安装 [StandardFormat][sublime-4]。
 
 [sublime-1]: https://packagecontrol.io/
 [sublime-2]: http://www.sublimelinter.com/en/latest/
@@ -237,10 +272,10 @@ For automatic formatting on save, install **[StandardFormat][sublime-4]**.
 
 ### Atom
 
-Install **[linter-js-standard][atom-1]**.
+安装 **[linter-js-standard][atom-1]**。
 
-For automatic formatting, install **[standard-formatter][atom-2]**. For snippets,
-install **[standardjs-snippets][atom-3]**.
+对于自动格式化，安装 **[standard-formatter][atom-2]**。
+对于 snippets，安装 **[standardjs-snippets][atom-3]**。
 
 [atom-1]: https://atom.io/packages/linter-js-standard
 [atom-2]: https://atom.io/packages/standard-formatter
@@ -248,9 +283,9 @@ install **[standardjs-snippets][atom-3]**.
 
 ### Visual Studio Code
 
-Install **[vscode-standardjs][vscode-1]**. (Includes support for automatic formatting.)
+安装 **[vscode-standardjs][vscode-1]**（支持自动格式化）。
 
-For JS snippets, install: **[vscode-standardjs-snippets][vscode-2]**. For React snippets, install **[vscode-react-standard][vscode-3]**.
+对于 JS snippets，安装 **[vscode-standardjs-snippets][vscode-2]**。对于 React snippets，安装 **[vscode-react-standard][vscode-3]**.
 
 [vscode-1]: https://marketplace.visualstudio.com/items/chenxsan.vscode-standardjs
 [vscode-2]: https://marketplace.visualstudio.com/items?itemName=capaj.vscode-standardjs-snippets
@@ -258,16 +293,16 @@ For JS snippets, install: **[vscode-standardjs-snippets][vscode-2]**. For React 
 
 ### Vim
 
-Install **[ale][vim-1]**.
+安装 **[ale][vim-1]**。
 
-For automatic formatting on save, add these lines to `.vimrc`:
+为了在保存文件时自动格式化，`.vimrc` 添加：
 
 ```vim
 autocmd bufwritepost *.js silent !standard --fix %
 set autoread
 ```
 
-Alternative plugins to consider include [neomake][vim-2] and [syntastic][vim-3], both of which have built-in support for `standard` (though configuration may be necessary).
+也可以考虑插件 [neomake][vim-2] 和 [syntastic][vim-3]，它们都支持 `standard`，尽管需要配置。
 
 [vim-1]: https://github.com/w0rp/ale
 [vim-2]: https://github.com/neomake/neomake
@@ -275,31 +310,29 @@ Alternative plugins to consider include [neomake][vim-2] and [syntastic][vim-3],
 
 ### Emacs
 
-Install **[Flycheck][emacs-1]** and check out the **[manual][emacs-2]** to learn
-how to enable it in your projects.
+安装 [Flycheck][emacs-1]，然后查看 [manual][emacs-2]，了解如何在项目中启用。
 
 [emacs-1]: http://www.flycheck.org
 [emacs-2]: http://www.flycheck.org/en/latest/user/installation.html
 
 ### Brackets
 
-Search the extension registry for **["Standard Code Style"][brackets-1]** and click "Install".
+在扩展库中搜索 **["Standard Code Style"][brackets-1]**。
 
 [brackets-1]: https://github.com/ishamf/brackets-standard/
 
 ### WebStorm (PhpStorm, IntelliJ, RubyMine, JetBrains, etc.)
 
-WebStorm [recently announced native support](https://blog.jetbrains.com/webstorm/2017/01/webstorm-2017-1-eap-171-2272/)
-for `standard` directly in the IDE.
+WebStorm [最近声明](https://blog.jetbrains.com/webstorm/2017/01/webstorm-2017-1-eap-171-2272/)
+可以在 IDE 内直接使用 `standard`。
 
-If you still prefer to configure `standard` manually, [follow this guide][webstorm-1]. This applies to all JetBrains products, including PhpStorm, IntelliJ, RubyMine, etc.
+如果你仍然喜欢手工配置 `standard`，参考[这份指南][webstorm-1]。它适用于所有的 JetBrains 产品，包含 PhpStorm, IntelliJ, RubyMine 等。
 
 [webstorm-1]: docs/webstorm.md
 
-## Is there a readme badge?
+## 有 readme 徽章吗？
 
-Yes! If you use `standard` in your project, you can include one of these badges in
-your readme to let people know that your code is using the standard style.
+有！如果你在项目中使用了 `standard`，你可以在 readme 中引用下面某个徽章，好让人们知道你的代码使用了 standard 风格。
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
@@ -313,58 +346,42 @@ your readme to let people know that your code is using the standard style.
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ```
 
-## I disagree with rule X, can you change it?
+## 我不同意规则 X，你可以修改它吗？
 
-No. The whole point of `standard` is to save you time by avoiding
-[bikeshedding][bikeshedding] about code style. There are lots of debates online about
-tabs vs. spaces, etc. that will never be resolved. These debates just distract from
-getting stuff done. At the end of the day you have to 'just pick something', and
-that's the whole philosophy of `standard` -- its a bunch of sensible 'just pick
-something' opinions. Hopefully, users see the value in that over defending their
-own opinions.
+不可以。`standard` 的全部意义是避免为代码风格 [bikeshedding][bikeshedding]（译注：打口水仗）从而为你节省时间。网上为 tabs vs. spaces 等有大量的争辩，永无定论。这些争论只是转移了真正做事的精力，直到一天要结束了你不得不做出选择。这便是 `standard` 的智慧，它是一些明智的“不得不的选择”。希望用户能看到它的价值，而不是为自己的选择争辩。
 
-If you really want to configure hundreds of ESLint rules individually, you can
-always use `eslint` directly with
-[eslint-config-standard](https://github.com/feross/eslint-config-standard) to
-layer your changes on top.
+如果你真的想一个个的配置几百个 ESLint 规则，你可以直接使用 `eslint`，在
+[eslint-config-standard](https://github.com/feross/eslint-config-standard) 的基础上修改。
 
-Pro tip: Just use `standard` and move on. There are actual real problems that you
-could spend your time solving! :P
+提示：直接用 `standard` 别管那么多。你的时间可以花在真正的问题上！:P
 
 [bikeshedding]: https://www.freebsd.org/doc/en/books/faq/misc.html#bikeshed-painting
 
-## But this isn't a real web standard!
+## 但是并没有真正的 web 标准！
 
-Of course it's not! The style laid out here is not affiliated with any official web
-standards groups, which is why this repo is called `feross/standard` and not
-`ECMA/standard`.
+当然没有！这里的规则不属于哪个 web 标准组织。这就是为什么这个项目叫做 `feross/standard` 而不是 `ECMA/standard`。
 
-The word "standard" has more meanings than just "web standard" :-) For example:
+单词 "standard" 的意思不只是 "web standard" :-)，比如：
 
-- This module helps hold our code to a high *standard of quality*.
-- This module ensures that new contributors follow some basic *style standards*.
+- 这个模块帮助我们的代码达到较高 *standard of quality*。
+- 这个模块确保新来者遵守基本的 *style standards*。
 
-## Is there an automatic formatter?
+## 有自动格式化工具吗？
 
-Yes! You can use `standard --fix` to automatically fix most issues automatically.
+有！运行 `standard --fix` 可以自动的修订多数的问题。
 
-`standard --fix` is built into `standard` for maximum convenience. Most problems
-are fixable, but some errors (like forgetting to handle errors) must be fixed
-manually.
+为了最大的方便，`standard` 内置 `standard --fix`。多数问题能被修订，不过有一些问题，比如在 node.js 回调中没有处理错误，必须手工处理。
 
-To save you time, `standard` outputs the message "`Run standard --fix to
-automatically fix some problems`" when it detects problems that can be fixed
-automatically.
+为了节省你的时间，`standard` 在检查到能自动修订的问题时输出一条消息 ("Run `standard --fix` to automatically fix some
+problems.") 。
 
-## How do I ignore files?
+## 如何忽略文件？
 
-Certain paths (`node_modules/`, `coverage/`, `vendor/`, `*.min.js`, `bundle.js`,
-and files/folders that begin with `.` like `.git/`) are automatically ignored.
+一些路径 (`node_modules/`, `coverage/`, `vendor/`, `*.min.js`, `bundle.js`, 以 `.` 开始的文件或目录，比如 `.git/`) 自动被忽略。
 
-Paths in a project's root `.gitignore` file are also automatically ignored.
+项目根目录下的 `.gitignore` 文件也自动被忽略。
 
-Sometimes you need to ignore additional folders or specific minified files. To do
-that, add a `standard.ignore` property to `package.json`:
+有时你需要忽略其它的目录或文件，可以这样做，`package.json` 添加 `standard.ignore`:
 
 ```json
 "standard": {
@@ -377,15 +394,13 @@ that, add a `standard.ignore` property to `package.json`:
 }
 ```
 
-## How do I hide a certain warning?
+## 如何隐藏某个警告？
 
-In rare cases, you'll need to break a rule and hide the warning generated by
-`standard`.
+你很少需要为了打破规则而隐藏 `standard` 的警告。
 
-JavaScript Standard Style uses [ESLint](http://eslint.org/) under-the-hood and
-you can hide warnings as you normally would if you used ESLint directly.
+JavaScript Standard Style 内部使用 [`eslint`](http://eslint.org/)，你可以像使用 ESLint 那样隐藏警告。
 
-To get verbose output (so you can find the particular rule name to ignore), run:
+为了得到详细的输出——这样你可以找到要忽略的规则的名字，运行：
 
 ```bash
 $ standard --verbose
@@ -393,19 +408,19 @@ Error: Use JavaScript Standard Style
   routes/error.js:20:36: 'file' was used before it was defined. (no-use-before-define)
 ```
 
-Disable **all rules** on a specific line:
+某一行禁用所有的规则：
 
 ```js
-file = 'I know what I am doing' // eslint-disable-line
+file = '我知道我在做什么' // eslint-disable-line
 ```
 
-Or, disable **only** the `"no-use-before-define"` rule:
+或者，只禁用 `"no-use-before-define"`：
 
 ```js
-file = 'I know what I am doing' // eslint-disable-line no-use-before-define
+file = '我知道我在做什么' // eslint-disable-line no-use-before-define
 ```
 
-Or, disable the `"no-use-before-define"` rule for **multiple lines**:
+或者，多行禁用 `"no-use-before-define"`：
 
 ```js
 /* eslint-disable no-use-before-define */
@@ -415,29 +430,24 @@ console.log('offending code goes here...')
 /* eslint-enable no-use-before-define */
 ```
 
-## I use a library that pollutes the global namespace. How do I prevent "variable is not defined" errors?
+## 我使用的库污染了全局空间，怎么阻止 "variable is not defined" 错误？
 
-Some packages (e.g. `mocha`) put their functions (e.g. `describe`, `it`) on the
-global object (poor form!). Since these functions are not defined or `require`'d
-anywhere in your code, `standard` will warn that you're using a variable that is
-not defined (usually, this rule is really useful for catching typos!). But we want
-to disable it for these global variables.
+一些包（比如 `mocha`）将它们的函数（比如 `describe`, `it`）放到
+global object 上（不好的做法）。因为你的代码没有定义或者 `require` 这些函数，`standard` 将警告你使用了未定义的变量（通常，这个规则对发现拼写错误非常有用）。但是我们要为这些全局变量禁用此规则。
 
-To let `standard` (as well as humans reading your code) know that certain variables
-are global in your code, add this to the top of your file:
+为了让 `standard`（包括阅读你的代码的人类）知道代码中某些变量是全局变量，在文件顶部添加：
 
 ```js
 /* global myVar1, myVar2 */
 ```
 
-If you have hundreds of files, it may be desirable to avoid adding comments to
-every file. In this case, run:
+如果你有几百个文件，为每个文件都添加上面注释会比较烦人。这时运行：
 
 ```bash
 $ standard --global myVar1 --global myVar2
 ```
 
-Or, add this to `package.json`:
+或者 `package.json` 添加：
 
 ```json
 {
@@ -447,25 +457,21 @@ Or, add this to `package.json`:
 }
 ```
 
-*Note: `global` and `globals` are equivalent.*
+*注意：`global` 和 `globals` 是一样的。*
 
-## How do I use experimental JavaScript (ES Next) features?
+## 我可以使用实验性质 JavaScript (ES Next) 功能吗？
 
-`standard` supports the latest ECMAScript features, ES8 (ES2017), including
-language feature proposals that are in "Stage 4" of the proposal process.
+`standard` 支持最新的 ECMAScript 功能，ES8 (ES2017)，包括出于 "Stage 4" 的提案。
 
-To support experimental language features, `standard` supports specifying a
-custom JavaScript parser. Before using a custom parser, consider whether the added
-complexity is worth it.
+为了支持实验性功能，`standard` 支持指定自定义解析器。在使用自定义解析器之前，考虑一下由此增加复杂度是否值得。
 
-To use a custom parser, install it from npm (example: `npm install babel-eslint`)
-and run:
+为了使用自定义解析器，使用 npm 安装它（比如 `npm install babel-eslint`），然后运行：
 
 ```bash
 $ standard --parser babel-eslint
 ```
 
-Or, add this to `package.json`:
+或者 `package.json` 添加：
 
 ```json
 {
@@ -475,24 +481,19 @@ Or, add this to `package.json`:
 }
 ```
 
-If `standard` is installed globally (i.e. `npm install standard --global`), then
-be sure to install `babel-eslint` globally as well, with
-`npm install babel-eslint --global`.
+如果 `standard` 是全局安装（比如 `npm install standard --global`），`babel-eslint` 已应当全局安装 `npm install babel-eslint --global`。
 
-## Can I use a JavaScript language variant, like Flow?
+## 我可以使用 JavaScript 变体吗，比如 Flow？
 
-Before using a custom JS language variant, consider whether the added complexity
-(and effort required to get new contributors up-to-speed) is worth it.
+在使用 JavaScript 变体前，考虑一下由此增加构建复杂度（以及影响新的贡献者上手速度）是否值得。
 
-`standard` supports ESLint plugins. Use one of these to transform your code into
-valid JavaScript before `standard` sees it. To use a custom parser, install it from
-npm and run:
+`standard` 支持 ESLint 插件。使用某个插件，在 `standard` 检查代码之前，将你的代码转为合法的 JavaScript 的代码。为了使用自定义解析器，使用 npm 安装它，然后运行：
 
 ```bash
 $ standard --plugin PLUGIN_NAME
 ```
 
-Or, add this to `package.json`:
+或者 `package.json` 添加：
 
 ```json
 {
@@ -502,14 +503,13 @@ Or, add this to `package.json`:
 }
 ```
 
-To use Flow, you need to use `babel-eslint` as your parser. So, run
-`npm install eslint-plugin-flowtype babel-eslint`, then run:
+为了使用 Flow, 需要使用 `babel-eslint` 作为解析器。运行 `npm install eslint-plugin-flowtype babel-eslint`，再运行：
 
 ```bash
 $ standard --plugin flowtype --parser babel-eslint
 ```
 
-Or, add this to `package.json`:
+或者 `package.json` 添加：
 
 ```json
 {
@@ -520,135 +520,124 @@ Or, add this to `package.json`:
 }
 ```
 
-If `standard` is installed globally (i.e. `npm install standard --global`), then
-be sure to install `eslint-plugin-flowtype` globally as well, with
-`npm install eslint-plugin-flowtype --global`.
+如果 `standard` 是全局安装（比如 `npm install standard --global`），`eslint-plugin-flowtype` 已应当全局安装 `npm install eslint-plugin-flowtype --global`。
 
-*Note: `plugin` and `plugins` are equivalent.*
+*注意：`plugin` 和 `plugins` 是一样的。*
 
-## What about Mocha, Jasmine, QUnit, etc?
+## Mocha, Jasmine, QUnit 等测试框架呢？
 
-To support mocha in your test files, add this to the beginning of your test files:
+想让你的测试文件支持 mocha，在测试文件的开头加上：
 
 ```js
 /* eslint-env mocha */
 ```
 
-Or, run:
+或者运行：
 
 ```bash
 $ standard --env mocha
 ```
 
-Where `mocha` can be one of `jasmine`, `qunit`, `phantomjs`, and so on. To see a
-full list, check ESLint's
-[specifying environments](http://eslint.org/docs/user-guide/configuring.html#specifying-environments)
-documentation. For a list of what globals are available for these environments,
-check the
-[globals](https://github.com/sindresorhus/globals/blob/master/globals.json) npm
-module.
+这里 `mocha` 可以是 `jasmine`, `qunit`, `phantomjs` 等等。
+全部列表见 ESLint 的文档：[指定环境](http://eslint.org/docs/user-guide/configuring.html#specifying-environments)。
+这些环境所有的全局变量见 [globals](https://github.com/sindresorhus/globals/blob/master/globals.json)。
 
-*Note: `env` and `envs` are equivalent.*
+*注意：`env` 和 `envs` 是一样的。*
 
-## What about Web Workers?
+## Web Workers 呢？
 
-Add this to the top of your files:
+在文件的顶部加上：
 
 ```js
 /* eslint-env serviceworker */
 ```
 
-This lets `standard` (as well as humans reading your code) know that `self` is a
-global in web worker code.
+这行代码让 `standard`（包含阅读你的代码的人类）知道 `self` 是 web worker 中的一个全局变量。
 
-## Can I check code inside of Markdown or HTML files?
+## 可以检查 Markdown 或 HTML 文件中的代码吗？
 
-To check code inside Markdown files, use [`standard-markdown`](https://www.npmjs.com/package/standard-markdown).
+想检查 Markdown 文件中的代码，可以使用 [`standard-markdown`](https://www.npmjs.com/package/standard-markdown)。
 
-Alternatively, there are ESLint plugins that can check code inside Markdown, HTML,
-and many other types of language files:
+另外，有 ESLint 插件可以检查 Markdown、 HTML以及其它语言文件中的代码。
 
-To check code inside Markdown files, use an ESLint plugin:
+想检查 Markdown 文件中的代码，使用 ESLint 插件：
 
 ```bash
 $ npm install eslint-plugin-markdown
 ```
 
-Then, to check JS that appears inside code blocks, run:
+然后检查代码块内的 JS 代码，运行：
 
 ```bash
 $ standard --plugin markdown '**/*.md'
 ```
 
-To check code inside HTML files, use an ESLint plugin:
+想检查 HTML 文件中的代码，使用 ESLint 插件：
 
 ```bash
 $ npm install eslint-plugin-html
 ```
 
-Then, to check JS that appears inside `<script>` tags, run:
+然后检查 `<script>` 标签内的 JS 代码，运行：
 
 ```bash
 $ standard --plugin html '**/*.html'
 ```
 
-## Is there a Git `pre-commit` hook?
+## 有 Git `pre-commit` 钩子吗？
 
-Funny you should ask!
+你这个问题真好笑！
 
-```sh
+```bash
 #!/bin/sh
-# Ensure all javascript files staged for commit pass standard code style
+# 确认所有的 JavaScript 文件通过 standard
 git diff --name-only --cached --relative | grep '\.jsx\?$' | xargs standard
 if [ $? -ne 0 ]; then exit 1; fi
 ```
 
-## How do I make the output all colorful and *pretty*?
+## 怎么让输出多彩美观？
 
-The built-in output is simple and straightforward, but if you like shiny things,
-install [snazzy](https://www.npmjs.com/package/snazzy):
+默认输出简单明了，如果你喜欢亮丽的东西，安装 [snazzy](https://github.com/feross/snazzy):
 
 ```bash
 $ npm install snazzy
 ```
 
-And run:
+然后运行：
 
 ```bash
 $ standard --verbose | snazzy
 ```
 
-There's also [standard-tap](https://www.npmjs.com/package/standard-tap),
-[standard-json](https://www.npmjs.com/package/standard-json),
-[standard-reporter](https://www.npmjs.com/package/standard-reporter), and
-[standard-summary](https://www.npmjs.com/package/standard-summary).
+也可以使用 [standard-tap](https://www.npmjs.com/package/standard-tap),
+[standard-json](https://www.npmjs.com/package/standard-json) 和
+[standard-reporter](https://www.npmjs.com/package/standard-reporter)。
 
-## Is there a Node.js API?
+## 有 Node.js API 吗？
 
-Yes!
+有！
 
 ### `standard.lintText(text, [opts], callback)`
 
-Lint the provided source `text`. An `opts` object may be provided:
+检查代码 `text`。 `opts`：
 
 ```js
 {
-  cwd: '',      // current working directory (default: process.cwd())
-  filename: '', // path of the file containing the text being linted (optional, though some eslint plugins require it)
-  fix: false,   // automatically fix problems
-  globals: [],  // custom global variables to declare
-  plugins: [],  // custom eslint plugins
-  envs: [],     // custom eslint environment
-  parser: ''    // custom js parser (e.g. babel-eslint)
+  cwd: '',      // 当前工作目录 (默认值: process.cwd())
+  filename: '', // 待检查的文件 (可选，尽管有些 eslint 插件需要)
+  fix: false,   // 自动修订
+  globals: [],  // 全局变量
+  plugins: [],  // eslint 插件
+  envs: [],     // eslint 环境
+  parser: ''    // js 解析器 (e.g. babel-eslint)
 }
 ```
 
-Additional options may be loaded from a `package.json` if it's found for the
-current working directory.
+其它选项可以从当前工作目录下 `package.json` 加载。
 
-The `callback` will be called with an `Error` and `results` object.
+`callback` 参数为 `Error` 和 `results` 对象。
 
-The `results` object will contain the following properties:
+`results`：
 
 ```js
 var results = {
@@ -660,7 +649,7 @@ var results = {
       ],
       errorCount: 0,
       warningCount: 0,
-      output: '' // fixed source code (only present with {fix: true} option)
+      output: '' // 修订后的代码（需要指定 {fix: true} 选项）
     }
   ],
   errorCount: 0,
@@ -670,50 +659,50 @@ var results = {
 
 ### `results = standard.lintTextSync(text, [opts])`
 
-Synchronous version of `standard.lintText()`. If an error occurs, an exception is
-thrown. Otherwise, a `results` object is returned.
+`standard.lintText()` 同步版本。如果出现错误将抛出异常，否则返回 `results` 对象。
 
 ### `standard.lintFiles(files, [opts], callback)`
 
-Lint the provided `files` globs. An `opts` object may be provided:
+检查文件 `files` globs, `opts` 可选：
 
 ```js
 var opts = {
-  ignore: [],   // file globs to ignore (has sane defaults)
-  cwd: '',      // current working directory (default: process.cwd())
-  fix: false,   // automatically fix problems
-  globals: [],  // global variables to declare
-  plugins: [],  // eslint plugins
-  envs: [],     // eslint environment
-  parser: ''    // js parser (e.g. babel-eslint)
+  ignore: [],   // 待忽略的文件 globs，默认值已经够用
+  cwd: '',      // 当前工作目录 (默认值： process.cwd())
+  fix: false,   // 自动修订
+  globals: [],  // 全局变量
+  plugins: [],  // eslint 插件
+  envs: [],     // eslint 环境
+  parser: ''    // js 解析器 (e.g. babel-eslint)
 }
 ```
 
-The `callback` will be called with an `Error` and `results` object (same as above).
+`callback` 参数为 `Error` 和 `results` 对象（同上）。
 
-## How do I contribute to `standard`?
+## 如何为 `standard` 做出贡献？
 
-Contributions are welcome! Check out the [issues](https://github.com/feross/standard/issues) or the [PRs](https://github.com/feross/standard/pulls), and make your own if you want something that you don't see there.
+欢迎！查看 [issues](https://github.com/feross/standard/issues) 或 [PRs](https://github.com/feross/standard/pulls)，如果没有找到你想要的就提交一个。
 
-Want to chat? Join contributors on IRC in the `#standard` channel on freenode.
+想群聊？在 freenode 加入 `#standard` 频道。
 
-Here are some important packages in the `standard` ecosystem:
+下面是 `standard` 生态系统中一些重要的包：
 
-- **[standard](https://github.com/feross/standard)** - this repo
-  - **[standard-engine](https://github.com/flet/standard-engine)** - cli engine for arbitrary eslint rules
-  - **[eslint-config-standard](https://github.com/feross/eslint-config-standard)** - eslint rules for standard
-  - **[eslint-config-standard-jsx](https://github.com/feross/eslint-config-standard-jsx)** - eslint rules for standard (JSX)
-  - **[eslint-plugin-standard](https://github.com/xjamundx/eslint-plugin-standard)** - custom eslint rules for standard (not part of eslint core)
-  - **[eslint](https://github.com/eslint/eslint)** - the linter that powers standard
-- **[snazzy](https://github.com/feross/snazzy)** - pretty terminal output for standard
-- **[standard-www](https://github.com/feross/standard-www)** - code for https://standardjs.com
-- **[semistandard](https://github.com/Flet/semistandard)** - standard, with semicolons (if you must)
+- **[standard](https://github.com/feross/standard)** - 本项目
+  - **[standard-engine](https://github.com/flet/standard-engine)** - 命令行引擎
+  - **[eslint-config-standard](https://github.com/feross/eslint-config-standard)** - standard 使用的 eslint 规则
+  - **[eslint-config-standard-jsx](https://github.com/feross/eslint-config-standard-jsx)** - standard (JSX) 使用的 eslint 规则
+  - **[eslint-plugin-standard](https://github.com/xjamundx/eslint-plugin-standard)** - standard 自定义的 eslint 规则，不是 eslint 的核心
+  - **[eslint](https://github.com/eslint/eslint)** - standard 使用的验证器
+- **[snazzy](https://github.com/feross/snazzy)** - 漂亮的输出
+- **[standard-www](https://github.com/feross/standard-www)** - http://standardjs.com 源码
+- **[semistandard](https://github.com/Flet/semistandard)** - 有分号的 standard，如果你必须用分号的话
 
-There are also many **[editor plugins](#text-editor-plugins)**, a list of
-**[npm packages that use `standard`](https://github.com/feross/standard-packages)**,
-and an awesome list of
-**[packages in the `standard` ecosystem](https://github.com/feross/awesome-standard)**.
+还有许多 **[编辑器插件](https://github.com/feross/standard#text-editor-plugins)**，
+**[使用 `standard` 的包](https://github.com/feross/standard-packages)**，
+以及 **[`standard` 生态系统中的包](https://github.com/feross/awesome-standard)**。
 
-## License
+## 版权
 
 [MIT](LICENSE). Copyright (c) [Feross Aboukhadijeh](http://feross.org).
+
+由 [Ivan Yan](http://yanxyz.net) 翻译，译文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，意见[反馈](https://github.com/hongfanqie/standardjs)。

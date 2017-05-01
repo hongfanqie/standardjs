@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Standard Style</title>
+  <link rel="stylesheet" href="https://standardjs.com/main.css">
+</head>
+<body>
+  {% include nav.html %}
+
+  <div class="content">
+    {{ content }}
+
+    <p id="msg"><strong>高级技巧：</strong> 加载 Github Gist，在此页地址后面添加 <strong>?gist=some_gist_id</strong>（以及可选的 <strong>&file=somefile.js</strong>），<a href="?gist=5bb585ed2585430e0c53&file=index.js">示例</a>。</p>
+  </div>
+
+  <div class="editor-wrapper">
+    <div id="javascript-editor" class="editor"></div>
+    <div id="messages"></div>
+  </div>
+  <div class="editor-wrapper">
+    <div id="versioninfo"></div>
+  </div>
+
+  <script src="https://standardjs.com/standard-demo.js"></script>
+</body>
+</html>
