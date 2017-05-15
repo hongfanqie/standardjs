@@ -1351,44 +1351,44 @@
 
 - [Are Semicolons Necessary in JavaScript? - YouTube][3]
 
-现在所有流行的代码压缩器都是通过 AST 压缩，因而它们在处理没有分号的 JavaScript 时没有问题（因为 JavaScript 不必须使用分号）。
+现在所有流行的代码压缩器都是通过 AST 压缩，因此它们在处理没有分号的 JavaScript 代码时没有问题（因为 JavaScript 不是必须使用分号）。
 
 ##### *开始引用 ["An Open Letter to JavaScript Leaders Regarding Semicolons"][1]*
 
-[依赖自动插入分号机制]的代码是非常安全的，是完全合法的 JavaScript 代码，每个浏览器都能正确解析。Closure compiler、yuicompressor、packer 及 jsmin 都能正确压缩。没有任何性能影响。
+[依赖自动插入分号机制]的代码是非常安全的，是完全合法的 JavaScript 代码，各浏览器都能正确解析；Closure compiler、yuicompressor、packer 及 jsmin 都能正确压缩。没有任何性能影响。
 
 抱歉，我不是向你说教，这个语言的社区领导者在撒谎，并且害怕告诉你真相。真是羞耻。我建议，先了解 JavaScript 语句是如何结束的以及什么情况不会结束，之后你可以写出漂亮的代码。
 
 一般来说，`\n` 结束语句，除非：
 
 1. 语句没有关闭括号、数组字面量、对象字面量，或者以其它不合法的方式结束，比如以 `.` 或 `,` 结束。
-2. 这一行是 `--` 或 `++`，这时它将递减或递增下一个 token。
-3. 这一行是 `for()`, `while()`, `do`, `if()`, 或 `else`，并且没有 `{`。
+2. 当前行是 `--` 或 `++`，这时它将递减或递增下一个 token。
+3. 当前行是 `for()`, `while()`, `do`, `if()`, 或 `else`，并且没有 `{`。
 4. 下一行行首是 `[`, `(`, `+`, `*`, `/`, `-`, `,`, `.` ，或者是二进制操作符——它们只能出现在一个表达式的两个操作数之间。
 
-第一条显而易见。像这些情况：JSON 或括号内有 `\n` 字符；一个 `var` 多行声明，每行以 `,` 结束，即使是 JSLint 都没问题，
+第一条显而易见。像这些情况：JSON 或括号内有 `\n` 字符；一个 `var` 多行声明，每行以 `,` 结束，即使是 JSLint 都没问题。
 
-第二条超级怪。我从来没有看到这种情况，你会这么写 `i\n++\nj`。事实上，它被解析为 `i; ++j`，而不是 `i++; j`。
+第二条很怪。我从没有看到这种写法 `i\n++\nj`。事实上，它被解析为 `i; ++j`，而不是 `i++; j`。
 
 第三条很好理解。`if (x)\ny()` 等于 `if (x) { y() }`。这个语句直到遇到一个语句块或语句才结束。
 
 `;` 是一个合法的 JavaScript 语句，所以 `if(x);` 等于 `if(x){}` 或 “If x, do nothing.” 。这更多用于循环，这时循环测试同时也是更新函数。不常见，但不是没听过。
 
-第四条通常是那些守旧之人提到的情况：“不，你需要分号！”。但是，事实证明，如果你的意思是这些行不是上一行的连续行，那么在这些行之前加上分号非常容易。例如，不这么写：
+第四条通常是那些因循守旧的人提到的情况：“不，你需要分号！”。但是，事实证明，如果你的意思是这些行不是上一行的连续行，那么在这些行之前加上分号非常容易。例如
 
 ```js
 foo();
 [1,2,3].forEach(bar);
 ```
 
-这么写：
+可以这么写：
 
 ```js
 foo()
 ;[1,2,3].forEach(bar)
 ```
 
-这么做的好处是，一旦你习惯了以 `(` 或 `[` 开始的行没有分号，你会很容易注意到行开始的分号。
+这么做的好处是，一旦你习惯了以 `(` 或 `[` 开始的行没有分号，你会很容易注意到行首的分号。
 
 *结束引用 "An Open Letter to JavaScript Leaders Regarding Semicolons"*
 
@@ -1400,7 +1400,7 @@ foo()
 
 由 [Ivan Yan](http://yanxyz.net) 翻译，译文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，意见[反馈](https://github.com/hongfanqie/standardjs)。
 
-关于分号更多讨论：
+更多关于分号的讨论：
 
 - [JavaScript 语句后应该加分号么？](http://www.zhihu.com/question/20298345)
 - [自动分号补齐，ASI](http://www.zhihu.com/question/21076930#answer-1988408)

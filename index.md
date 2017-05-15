@@ -33,7 +33,7 @@
 - **自动格式化代码。** 只需运行命令 `standard --fix` 便可以跟杂乱不统一的代码风格说再见。
 - **在代码提交前发现代码风格上的错误。** 消除维护者与贡献者之间的来回打转，节省宝贵的代码审查时间。
 
-不需要选择，不需要 `.eslintrc`、`.jshintrc` 或 `.jscsrc`，就可以用。
+不需要做什么选择，不需要 `.eslintrc`、`.jshintrc` 或 `.jscsrc`，安装即用。
 
 安装：
 
@@ -46,9 +46,9 @@ npm install standard --save-dev
 - 缩进使用两个空格。
 - 字符串使用单引号，用双引号只是为了避免转义单引号。
 - 无未使用变量。这能帮助发现大量的错误。
-- 不使用分号。[这么做][1] [没问题][2]。 [真的][3]！
+- 不使用分号。[这么做][1]，[没问题][2]，[真的][3]！
 - 行首不能是 `(`，`[` 或 `` ` ``。
-    - 这是省略分号时唯一陷阱——自动为你检查。
+    - 这是省略分号时唯一陷阱—— `standard` 自动为你检查。
     - [详细][4]
 - 关键字后面放一个空格。`if (condition) { ... }`
 - 函数名字后面放一个空格。`function name (arg) { ... }`
@@ -65,8 +65,8 @@ npm install standard --save-dev
 [4]: rules.md#分号
 [5]: rules.md#javascript-standard-style
 
-为了更好的理解，看看使用 JavaScript Standard Style 写的[示例](https://github.com/feross/bittorrent-dht/blob/master/client.js)，
-或者看看使用 `standard` 的[项目](https://github.com/feross/standard-packages/blob/master/all.json)。
+为了更好的理解，看一看使用 JavaScript Standard Style 写的[示例](https://github.com/feross/bittorrent-dht/blob/master/client.js)，
+或者看一看使用 `standard` 的[项目](https://github.com/feross/standard-packages/blob/master/all.json)。
 
 ## 目录
 

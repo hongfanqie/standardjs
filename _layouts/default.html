@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JavaScript Standard Style</title>
+  {% if site.github.owner_name %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  {% else %}
   <link rel="stylesheet" href="https://hongfanqie.github.io/default/assets/css/style.css">
+  {% endif %}
+
   <link rel="stylesheet" href="https://standardjs.com/main.css">
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css?v=' | append: site.github.build_revision | relative_url }}">
 </head>
 <body>
   {% include nav.html %}
